@@ -1,911 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ProPix Real Estate Photography Melbourne</title>
-
-<meta name="description" content="Professional Real Estate Photography in Melbourne. HDR photos, drone photography, cinematic property videos and floor plans.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-
-<style>
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Inter',sans-serif;
-margin:0;
-background:#fff;
-color:#14233c;
-overflow-x:hidden;
-padding-bottom:90px;
-}
-
-.container{
-width:90%;
-max-width:1400px;
-margin:auto;
-}
-
-section{
-padding:80px 0;
-}
-
-h2{
-font-size:42px;
-margin-bottom:40px;
-text-align:center;
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:#fff;
-padding:18px 0;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-z-index:9999;
-}
-
-.nav-container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo-wrap{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo-wrap img{
-width:70px;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-align-items:center;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#14233c;
-font-weight:600;
-transition:0.3s ease;
-}
-
-.nav-links a:hover{
-color:#d7b16d;
-}
-
-.menu-btn{
-display:none;
-font-size:28px;
-cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-background:
-linear-gradient(to right, rgba(10,20,40,0.88), rgba(10,20,40,0.2)),
-url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000&auto=format&fit=crop') center/cover;
-color:#fff;
-}
-
-.hero h1{
-font-size:5rem;
-line-height:1;
-margin-bottom:20px;
-}
-
-.hero span{
-color:#d7b16d;
-}
-
-.hero p{
-font-size:20px;
-max-width:700px;
-line-height:1.7;
-}
-
-.btn{
-display:inline-block;
-padding:16px 30px;
-background:#14233c;
-color:#fff;
-border-radius:10px;
-text-decoration:none;
-margin-right:15px;
-margin-top:10px;
-font-weight:600;
-transition:0.3s ease;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-background:#d7b16d;
-color:#14233c;
-}
-
-/* SERVICES */
-
-.services-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:#fff;
-padding:35px;
-border-radius:20px;
-box-shadow:0 8px 25px rgba(0,0,0,0.05);
-text-align:center;
-transition:0.4s ease;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.12);
-}
-
-.card i{
-font-size:40px;
-margin-bottom:20px;
-}
-
-/* PORTFOLIO */
-
-.portfolio{
-background:#f7f8fb;
-}
-
-.portfolio-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.portfolio-grid img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:20px;
-transition:0.4s ease;
-}
-
-.portfolio-grid img:hover{
-transform:scale(1.04);
-}
-
-/* PACKAGES */
-
-.pricing-grid-new{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
-align-items:stretch;
-}
-
-.package-card{
-background:#fff;
-border-radius:25px;
-overflow:hidden;
-position:relative;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
-transition:0.45s ease;
-border:1px solid #dfe5ee;
-animation:fadeUp 1s ease;
-}
-
-.package-card:hover{
-transform:translateY(-15px) scale(1.02);
-box-shadow:0 30px 60px rgba(0,0,0,0.15);
-}
-
-.package-top{
-background:#1d2d4a;
-padding:24px;
-text-align:center;
-color:#fff;
-}
-
-.package-top h3{
-margin:0;
-font-size:22px;
-letter-spacing:1px;
-line-height:1.4;
-}
-
-.package-price{
-font-size:36px;
-font-weight:800;
-text-align:center;
-padding:25px 15px;
-color:#1d2d4a;
-line-height:1.2;
-}
-
-.package-main-image,
-.package-bottom-image{
-width:100%;
-height:260px;
-object-fit:cover;
-transition:0.5s ease;
-}
-
-.package-card:hover .package-main-image,
-.package-card:hover .package-bottom-image{
-transform:scale(1.08);
-}
-
-.package-features{
-padding:22px;
-}
-
-.feature-row{
-display:flex;
-align-items:center;
-gap:14px;
-padding:14px 0;
-border-bottom:1px solid #ececec;
-font-size:18px;
-color:#1d2d4a;
-}
-
-.feature-row i{
-font-size:22px;
-width:32px;
-}
-
-.popular-badge{
-position:absolute;
-top:18px;
-right:18px;
-background:#fff;
-width:110px;
-height:110px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-font-weight:800;
-font-size:18px;
-color:#1d2d4a;
-border:5px solid #1d2d4a;
-z-index:10;
-animation:pulse 2s infinite;
-line-height:1.2;
-}
-
-/* CONTACT */
-
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-}
-
-input,
-textarea{
-width:100%;
-padding:16px;
-margin-bottom:20px;
-border:1px solid #ddd;
-border-radius:10px;
-font-family:'Inter',sans-serif;
-box-sizing:border-box;
-}
-
-button{
-padding:16px;
-background:#14233c;
-color:#fff;
-border:none;
-border-radius:10px;
-font-weight:700;
-cursor:pointer;
-font-size:16px;
-transition:0.3s ease;
-}
-
-button:hover{
-background:#d7b16d;
-color:#14233c;
-}
-
-/* FOOTER */
-
-footer{
-background:#14233c;
-color:#fff;
-padding:40px 0;
-margin-top:40px;
-}
-
-.socials{
-display:flex;
-gap:20px;
-font-size:28px;
-}
-
-.socials a{
-color:#fff;
-transition:0.3s ease;
-}
-
-.socials a:hover{
-color:#d7b16d;
-}
-
-/* WHATSAPP */
-
-.whatsapp-float{
-position:fixed;
-bottom:100px;
-right:25px;
-width:65px;
-height:65px;
-background:#25D366;
-color:#fff;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:32px;
-z-index:9999;
-text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* MOBILE BOTTOM NAV */
-
-.mobile-bottom-nav{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#fff;
-display:flex;
-justify-content:space-around;
-align-items:center;
-padding:10px 0;
-box-shadow:0 -5px 20px rgba(0,0,0,0.1);
-z-index:99999;
-border-top-left-radius:20px;
-border-top-right-radius:20px;
-}
-
-.mobile-bottom-nav a{
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-font-size:12px;
-color:#14233c;
-font-weight:600;
-transition:0.3s ease;
-}
-
-.mobile-bottom-nav a i{
-font-size:22px;
-margin-bottom:5px;
-}
-
-.mobile-bottom-nav a:hover{
-transform:translateY(-5px);
-color:#25D366;
-}
-
-/* ANIMATIONS */
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero{
-padding:120px 0;
-height:auto;
-}
-
-.hero h1{
-font-size:3rem;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.menu-btn{
-display:block;
-}
-
-.nav-links{
-position:absolute;
-top:80px;
-right:0;
-background:#fff;
-width:220px;
-flex-direction:column;
-padding:20px;
-display:none;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-.nav-links.active{
-display:flex;
-}
-
-.contact-grid{
-grid-template-columns:1fr;
-}
-
-.package-price{
-font-size:28px;
-}
-
-.feature-row{
-font-size:15px;
-}
-
-.package-top h3{
-font-size:18px;
-}
-
-.package-main-image,
-.package-bottom-image{
-height:190px;
-}
-
-.popular-badge{
-width:90px;
-height:90px;
-font-size:14px;
-top:10px;
-right:10px;
-}
-
-}
-
-@media(min-width:769px){
-.mobile-bottom-nav{
-display:none;
-}
-}
-
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ProPix real estate photography, drone, floor plans and cinematic property video across Melbourne and Pakenham.">
+  <meta name="theme-color" content="#070707">
+  <title>ProPix | Real Estate Photography Melbourne</title>
+  <style>
+    :root{--ink:#070707;--muted:#aaa59b;--paper:#0d0d0d;--white:#171717;--lime:#d7a21f;--line:rgba(215,162,31,.28);--radius:8px;--shadow:0 24px 70px rgba(0,0,0,.5);--font-display:"Bodoni 72",Didot,"Cormorant Garamond","Playfair Display",Georgia,serif;--font-body:"Avenir Next","Montserrat",Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:#f6f3ec;font-family:var(--font-body);overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    img{display:block;width:100%}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(1240px,calc(100% - 48px));margin:auto}
+    .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 20px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--lime)}
+    .section-title{font-family:var(--font-display);font-size:clamp(38px,6vw,76px);font-weight:600;line-height:.96;letter-spacing:.01em;margin:0;max-width:820px}
+    .section-copy{font-size:18px;line-height:1.65;color:var(--muted);max-width:570px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border:1px solid var(--ink);border-radius:4px;background:var(--ink);color:#fff;font-weight:800;transition:transform .2s,background .2s,color .2s}
+    .btn:hover{transform:translateY(-3px);background:var(--lime);color:var(--ink)}
+    .btn.light{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.08);backdrop-filter:blur(12px)}
+    .btn.light:hover{background:#fff;color:var(--ink)}
+    .btn.lime{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+    .icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+    header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand-icon{width:58px;height:54px;object-fit:cover;border-radius:4px}
+    .brand-logo{width:180px;height:54px;object-fit:contain;object-position:left center}
+    .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}
+    .nav-links a:not(.btn):hover{color:var(--lime)}
+    header .btn{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+    .menu-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);background:transparent;border-radius:4px}
+
+    .hero{min-height:100svh;padding:128px 0 66px;display:grid;align-items:center;background:var(--ink);color:#fff;position:relative;isolation:isolate;overflow:hidden}
+    .hero:after{content:"";position:absolute;inset:auto -10% -35% 38%;height:70%;background:radial-gradient(circle,rgba(215,162,31,.22),transparent 65%);z-index:-2}
+    .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
+    .hero h1{font-family:var(--font-display);font-size:clamp(54px,7.2vw,108px);font-weight:600;line-height:.86;letter-spacing:.01em;margin:0 0 28px;max-width:760px}
+    .hero h1 span{color:var(--lime)}
+    .hero-copy{font-size:18px;line-height:1.65;color:#c9ccc6;max-width:580px;margin:0 0 32px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .trust-row{display:flex;gap:26px;margin-top:42px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15)}
+    .trust-item strong{display:block;font-size:20px;color:#fff}.trust-item span{font-size:12px;color:#a9aea5}
+    .hero-stage{height:650px;position:relative;perspective:1400px;transform-style:preserve-3d}
+    .hero-photo{position:absolute;border:1px solid rgba(255,255,255,.2);box-shadow:0 40px 80px rgba(0,0,0,.45);overflow:hidden;will-change:transform}
+    .hero-photo img{height:100%;object-fit:cover}
+    .hero-photo.main{width:78%;height:74%;right:3%;top:10%;transform:rotateY(-10deg) rotateX(3deg) translateZ(20px)}
+    .hero-photo.side{width:42%;height:37%;left:0;bottom:6%;transform:rotateY(13deg) rotateZ(-3deg) translateZ(80px)}
+    .hero-photo.detail{width:35%;height:31%;right:-5%;bottom:0;transform:rotateY(-14deg) rotateZ(3deg) translateZ(120px)}
+    .floating-label{position:absolute;left:10%;top:7%;z-index:4;background:var(--lime);color:var(--ink);padding:13px 16px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;box-shadow:0 16px 32px rgba(0,0,0,.25);animation:float 4s ease-in-out infinite}
+    @keyframes float{50%{transform:translateY(-10px) rotate(1deg)}}
+
+    .stats{background:var(--lime);color:var(--ink);border-bottom:1px solid var(--ink)}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:26px 28px;border-right:1px solid rgba(16,18,15,.25)}
+    .stat:last-child{border:0}.stat strong{font-size:28px}.stat span{display:block;font-size:12px;font-weight:800;margin-top:3px;text-transform:uppercase;letter-spacing:.08em}
+
+    section{padding:112px 0}
+    .intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end;margin-bottom:58px}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .service{min-height:280px;padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;overflow:hidden;transition:background .25s,color .25s,transform .25s;transform-style:preserve-3d}
+    .service:hover{background:#17130b;color:#fff;transform:translateY(-8px) rotateX(2deg)}
+    .service .num{font-size:11px;font-weight:900;color:var(--muted)}
+    .service svg{width:32px;height:32px;margin:52px 0 26px}
+    .service h3{font-family:var(--font-display);font-size:25px;font-weight:600;margin:0 0 10px}.service p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}.service:hover p,.service:hover .num{color:#b9bdb5}
+
+    .work{background:#151515;overflow:hidden}
+    .work-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:44px}
+    .work-grid{display:grid;grid-template-columns:1.25fr .75fr;grid-template-rows:340px 340px;gap:16px;perspective:1200px}
+    .project{position:relative;overflow:hidden;background:#bbb;transform-style:preserve-3d;transition:transform .18s ease-out;box-shadow:0 10px 30px rgba(16,18,15,.08)}
+    .project:first-child{grid-row:span 2}.project img{height:100%;object-fit:cover;transition:transform .6s}
+    .project:hover img{transform:scale(1.05)}
+    .project-info{position:absolute;inset:auto 0 0;padding:44px 24px 22px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75));transform:translateZ(35px)}
+    .project-info strong{display:block;font-family:var(--font-display);font-size:27px;font-weight:600}.project-info span{font-size:12px;color:#ddd}
+
+    .video-showcase{background:#080808;color:#fff;overflow:hidden}
+    .video-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:58px;align-items:center}
+    .video-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);background:#050505;box-shadow:var(--shadow)}
+    .video-frame:before{content:"";position:absolute;inset:14px;z-index:2;border:1px solid rgba(215,162,31,.52);pointer-events:none}
+    .video-frame video{display:block;width:100%;height:100%;object-fit:cover}
+    .video-copy .section-title{font-size:clamp(40px,5vw,72px)}
+    .video-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px;color:#d8d1c2}
+    .video-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.55}
+    .video-list li:before{content:"";width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 18px rgba(215,162,31,.8)}
+
+    .gallery{background:#101010;color:#fff}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:260px;gap:12px;margin-top:46px}
+    .gallery-card{position:relative;overflow:hidden;border:1px solid rgba(215,162,31,.18);background:#171717;box-shadow:0 18px 45px rgba(0,0,0,.26)}
+    .gallery-card.wide{grid-column:span 2}
+    .gallery-card.tall{grid-row:span 2}
+    .gallery-card img{height:100%;object-fit:cover;transition:transform .65s,filter .65s}
+    .gallery-card:hover img{transform:scale(1.055);filter:saturate(1.08)}
+    .gallery-caption{position:absolute;left:0;right:0;bottom:0;padding:46px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+    .gallery-caption strong{display:block;font-family:var(--font-display);font-size:25px;font-weight:600}
+    .gallery-caption span{font-size:12px;color:#d4c8ad}
+
+    .packages{background:var(--ink);color:#fff}
+    .packages .section-copy{color:#afb4ab}
+    .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:54px;align-items:stretch}
+    .package{padding:34px;border:1px solid rgba(255,255,255,.18);background:#161916;position:relative;display:flex;flex-direction:column;min-height:520px;transition:transform .25s,border-color .25s}
+    .package:hover{transform:translateY(-10px);border-color:var(--lime)}
+    .package.featured{background:var(--lime);color:var(--ink);transform:translateY(-14px)}
+    .package.featured:hover{transform:translateY(-22px)}
+    .badge{position:absolute;right:24px;top:24px;padding:7px 10px;border:1px solid currentColor;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}
+    .package h3{font-family:var(--font-display);font-size:29px;font-weight:600;margin:0 0 42px}.price{font-size:44px;font-weight:900;line-height:1;margin-bottom:12px}.price small{font-size:13px;font-weight:600}.package>p{color:#aeb2aa;line-height:1.6;min-height:52px}.package.featured>p{color:#425016}
+    .package ul{list-style:none;padding:24px 0 0;margin:24px 0 34px;border-top:1px solid rgba(255,255,255,.16);display:grid;gap:15px}.package.featured ul{border-color:rgba(16,18,15,.22)}
+    .package li{display:flex;gap:10px;font-size:14px}.package li:before{content:"+";font-weight:900;color:var(--lime)}.package.featured li:before{color:var(--ink)}
+    .package .btn{margin-top:auto}.package:not(.featured) .btn{border-color:#fff}.package.featured .btn:hover{background:#fff}
+
+    .process-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:100px;align-items:start}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:28px 0;border-bottom:1px solid var(--line)}
+    .step span{font-size:12px;font-weight:900}.step h3{font-family:var(--font-display);font-size:28px;font-weight:600;margin:0 0 8px}.step p{margin:0;color:var(--muted);line-height:1.6}
+
+    .quote{background:var(--lime);color:var(--ink);position:relative;overflow:hidden}
+    .quote:before{content:"PROPIX";position:absolute;right:-25px;bottom:-45px;font-weight:950;font-size:220px;line-height:1;color:rgba(16,18,15,.06)}
+    .quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;position:relative}
+    .quote h2{font-family:var(--font-display);font-size:clamp(48px,7vw,92px);font-weight:600;line-height:.9;margin:0 0 24px}.quote a.contact-link{display:block;font-weight:800;margin:12px 0;text-decoration:underline;text-underline-offset:4px}
+    .quote .section-copy{color:#453819}
+    .quote-form{background:var(--white);color:#f6f3ec;padding:34px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field.full{grid-column:1/-1}
+    label{display:block;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+    input,select,textarea{width:100%;border:1px solid #4c4638;border-radius:4px;padding:14px;background:#0c0c0c;color:#f6f3ec;outline:0}
+    input:focus,select:focus,textarea:focus{border-color:var(--lime);box-shadow:0 0 0 3px rgba(215,162,31,.28)}
+    textarea{min-height:110px;resize:vertical}.form-note{font-size:12px;color:var(--muted);line-height:1.5;margin:14px 0 0}.quote-form .btn{width:100%;margin-top:18px}
+
+    footer{padding:48px 0;background:var(--ink);color:#fff}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}.footer-brand{font-family:var(--font-display);font-size:36px;font-weight:600}.footer-brand span{color:var(--lime)}
+    .socials{display:flex;gap:12px}.socials a{padding:10px 12px;border:1px solid rgba(255,255,255,.24);font-size:13px;font-weight:700}.socials a:hover{background:var(--lime);color:var(--ink)}
+    .footer-bottom{display:flex;justify-content:space-between;margin-top:38px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;color:#9da29a}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+    .mobile-bar{display:none}
+
+    @media(max-width:1000px){
+      .hero-grid{grid-template-columns:1fr;gap:30px}.hero-stage{height:520px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}
+      .intro-grid,.process-grid,.quote-grid,.video-grid{grid-template-columns:1fr;gap:42px}.service-grid{grid-template-columns:repeat(2,1fr)}.package-grid{grid-template-columns:1fr}.package.featured{transform:none}.package.featured:hover{transform:translateY(-8px)}.gallery-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:760px){
+      body{padding-bottom:66px}.wrap{width:min(100% - 28px,1240px)}.nav{height:66px}.brand{gap:7px}.brand-icon{width:44px;height:42px}.brand-logo{width:126px;height:42px}.nav-links{position:fixed;inset:66px 0 0;display:flex;flex-direction:column;align-items:flex-start;padding:34px;background:var(--paper);transform:translateX(100%);transition:transform .25s;font-size:22px}.nav-links.open{transform:none}.nav-links .btn{width:100%}.menu-toggle{display:grid;place-items:center;color:#fff}
+      .hero{padding:104px 0 48px;min-height:auto}.hero h1{font-size:52px}.hero-copy{font-size:16px}.hero-stage{height:390px}.hero-photo.main{width:82%;height:70%;right:2%}.hero-photo.side{width:48%;height:35%;bottom:2%}.hero-photo.detail{display:none}.floating-label{left:4%;top:2%}.trust-row{gap:20px}.trust-item strong{font-size:17px}
+      section{padding:78px 0}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:20px 16px}.stat strong{font-size:22px}.section-copy{font-size:16px}.intro-grid{margin-bottom:38px}.service-grid{grid-template-columns:1fr}.service{min-height:240px}.service svg{margin:36px 0 20px}
+      .work-head{align-items:start;flex-direction:column}.work-grid{grid-template-columns:1fr;grid-template-rows:440px 280px 280px}.project:first-child{grid-row:auto}.gallery-grid{grid-template-columns:1fr;grid-auto-rows:280px}.gallery-card.wide,.gallery-card.tall{grid-column:auto;grid-row:auto}.video-frame:before{inset:9px}.package{min-height:auto}.package .btn{margin-top:18px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.quote-form{padding:22px}.quote:before{font-size:100px}.footer-grid,.footer-bottom{display:grid;grid-template-columns:1fr}.socials{flex-wrap:wrap}
+      .mobile-bar{position:fixed;z-index:45;inset:auto 0 0;display:grid;grid-template-columns:1fr 1fr;background:#080808;border-top:1px solid var(--line)}.mobile-bar a{height:66px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:900}.mobile-bar a:last-child{background:var(--lime);color:var(--ink);border-left:1px solid var(--ink)}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
 </head>
-
 <body>
-
-<nav>
-
-<div class="container nav-container">
-
-<div class="logo-wrap">
-
-<img src="./logo.png" alt="Logo">
-
-<div>
-<h2 style="margin:0; font-size:28px;">PROPIX</h2>
-<p style="margin:0; font-size:12px; letter-spacing:2px;">
-REAL ESTATE PHOTOGRAPHY
-</p>
-</div>
-
-</div>
-
-<div class="menu-btn">
-<i class="fa-solid fa-bars"></i>
-</div>
-
-<div class="nav-links">
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#packages">Packages</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-</nav>
-
-<section class="hero">
-
-<div class="container">
-
-<h1>
-PROFESSIONAL REAL ESTATE PHOTOGRAPHY <br>
-<span>MELBOURNE</span>
-</h1>
-
-<p>
-Premium property photography, drone footage, floor plans and cinematic videos that help your listings stand out.
-</p>
-
-<a href="#portfolio" class="btn">View Portfolio</a>
-<a href="#contact" class="btn">Get Quote</a>
-
-</div>
-
-</section>
-
-<section id="services">
-
-<div class="container">
-
-<h2>Our Services</h2>
-
-<div class="services-grid">
-
-<div class="card">
-<i class="fa-solid fa-camera"></i>
-<h3>Real Estate Photography</h3>
-<p>Professional HDR property photography.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-helicopter"></i>
-<h3>Drone Photography</h3>
-<p>Stunning aerial property coverage.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-video"></i>
-<h3>Videography</h3>
-<p>Cinematic walkthrough property videos.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-vector-square"></i>
-<h3>Floor Plans</h3>
-<p>Professional floor plan layouts.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="portfolio" id="portfolio">
-
-<div class="container">
-
-<h2>Portfolio</h2>
-
-<div class="portfolio-grid">
-
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1400&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1400&auto=format&fit=crop">
-
-<img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1400&auto=format&fit=crop">
-
-</div>
-
-</div>
-
-</section>
-
-<section id="packages" style="background:#f7f8fb;">
-
-<div class="container">
-
-<h2>OUR PACKAGES</h2>
-
-<div class="pricing-grid-new">
-
-<!-- BASIC -->
-
-<div class="package-card">
-
-<div class="package-top">
-<h3>BASIC MARKETING PACKAGE</h3>
-</div>
-
-<div class="package-price">
-$300 – $450
-</div>
-
-<img class="package-main-image"
-src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=1400&auto=format&fit=crop">
-
-<div class="package-features">
-
-<div class="feature-row">
-<i class="fa-solid fa-camera"></i>
-<span>Photos (15–20)</span>
-</div>
-
-<div class="feature-row">
-<i class="fa-solid fa-vector-square"></i>
-<span>Floor Plan</span>
-</div>
-
-</div>
-
-<img class="package-bottom-image"
-src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400&auto=format&fit=crop">
-
-</div>
-
-<!-- STANDARD -->
-
-<div class="package-card">
-
-<div class="popular-badge">
-MOST<br>POPULAR
-</div>
-
-<div class="package-top">
-<h3>STANDARD PACKAGE</h3>
-</div>
-
-<div class="package-price">
-$400 – $650
-</div>
-
-<img class="package-main-image"
-src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1400&auto=format&fit=crop">
-
-<div class="package-features">
-
-<div class="feature-row">
-<i class="fa-solid fa-camera"></i>
-<span>Photos (15–20)</span>
-</div>
-
-<div class="feature-row">
-<i class="fa-solid fa-helicopter"></i>
-<span>Drone Photos</span>
-</div>
-
-<div class="feature-row">
-<i class="fa-solid fa-vector-square"></i>
-<span>Floor Plan</span>
-</div>
-
-</div>
-
-<img class="package-bottom-image"
-src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1400&auto=format&fit=crop">
-
-</div>
-
-<!-- PREMIUM -->
-
-<div class="package-card">
-
-<div class="package-top">
-<h3>PREMIUM PACKAGE</h3>
-</div>
-
-<div class="package-price">
-$700 – $1,200+
-</div>
-
-<img class="package-main-image"
-src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=1400&auto=format&fit=crop">
-
-<div class="package-features">
-
-<div class="feature-row">
-<i class="fa-solid fa-camera"></i>
-<span>Photos (15–20)</span>
-</div>
-
-<div class="feature-row">
-<i class="fa-solid fa-helicopter"></i>
-<span>Drone Photos</span>
-</div>
-
-<div class="feature-row">
-<i class="fa-solid fa-video"></i>
-<span>Video</span>
-</div>
-
-<div class="feature-row">
-<i class="fa-solid fa-vector-square"></i>
-<span>Floor Plan</span>
-</div>
-
-<div class="feature-row">
-<i class="fa-solid fa-moon"></i>
-<span>Twilight Shot</span>
-</div>
-
-</div>
-
-<img class="package-bottom-image"
-src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1400&auto=format&fit=crop">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="contact">
-
-<div class="container">
-
-<h2>Contact Us</h2>
-
-<div class="contact-grid">
-
-<form action="https://api.web3forms.com/submit" method="POST">
-
-<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Email Address" required>
-
-<input type="tel" name="phone" placeholder="Phone Number">
-
-<textarea name="message" placeholder="Tell us about your project"></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-<div>
-
-<h3>Contact Information</h3>
-
-<p><i class="fa-solid fa-phone"></i> 0421 792 742</p>
-
-<p>
-<i class="fa-brands fa-whatsapp"></i>
-<a href="https://wa.me/61421792742" target="_blank">WhatsApp Chat</a>
-</p>
-
-<p>
-<i class="fa-brands fa-instagram"></i>
-<a href="https://www.instagram.com/propixrealestatephotography1/?hl=en" target="_blank">Instagram</a>
-</p>
-
-<p>
-<i class="fa-brands fa-facebook"></i>
-<a href="https://www.facebook.com/profile.php?id=61588986824109" target="_blank">Facebook</a>
-</p>
-
-<p>
-<i class="fa-solid fa-envelope"></i>
-propixrealestatephotography@gmail.com
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="container">
-
-<h2>PROPIX REAL ESTATE PHOTOGRAPHY</h2>
-
-<p>
-Professional Property Photography, Drone & Real Estate Media.
-</p>
-
-<div class="socials">
-
-<a href="https://wa.me/61421792742" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<a href="https://www.instagram.com/propixrealestatephotography1/?hl=en" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-</a>
-
-<a href="https://www.facebook.com/profile.php?id=61588986824109" target="_blank">
-<i class="fa-brands fa-facebook"></i>
-</a>
-
-</div>
-
-<br>
-
-<p>
-© 2026 ProPix Real Estate Photography
-</p>
-
-</div>
-
-</footer>
-
-<a href="https://wa.me/61421792742"
-class="whatsapp-float"
-target="_blank">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-<div class="mobile-bottom-nav">
-
-<a href="#">
-<i class="fa-solid fa-house"></i>
-<span>Home</span>
-</a>
-
-<a href="#portfolio">
-<i class="fa-solid fa-camera"></i>
-<span>Portfolio</span>
-</a>
-
-<a href="#packages">
-<i class="fa-solid fa-tag"></i>
-<span>Packages</span>
-</a>
-
-<a href="https://wa.me/61421792742" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-<span>WhatsApp</span>
-</a>
-
-<a href="#contact">
-<i class="fa-solid fa-phone"></i>
-<span>Contact</span>
-</a>
-
-</div>
-
-<script>
-
-const menuBtn = document.querySelector('.menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-menuBtn.addEventListener('click', ()=>{
-navLinks.classList.toggle('active');
-});
-
-</script>
-
+  <header>
+    <div class="nav wrap">
+      <a class="brand" href="#top" aria-label="ProPix home"><img class="brand-icon" src="assets/propix-icon.png" alt=""><img class="brand-logo" src="assets/propix-logo.png" alt="ProPix Real Estate Photography"></a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav-links" aria-label="Main navigation"><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#video">Video</a><a href="#recent-work">Recent Work</a><a href="#packages">Packages</a><a href="#process">Process</a><a class="btn" href="#quote">Get a quote <span aria-hidden="true">↗</span></a></nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid wrap">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Property media across Melbourne</p>
+          <h1>Make every listing <span>impossible</span> to scroll past.</h1>
+          <p class="hero-copy">Photography, drone, cinematic video and floor plans crafted to win attention, build trust and help agents market with confidence.</p>
+          <div class="hero-actions"><a class="btn lime" href="#quote">Book a property shoot <span aria-hidden="true">↗</span></a><a class="btn light" href="#work">View recent work</a></div>
+          <div class="trust-row"><div class="trust-item"><strong>Fast</strong><span>Turnaround</span></div><div class="trust-item"><strong>4K</strong><span>Video delivery</span></div><div class="trust-item"><strong>CASA</strong><span>Drone ready</span></div></div>
+        </div>
+        <div class="hero-stage" aria-label="Featured property photography">
+          <div class="floating-label">Melbourne property media</div>
+          <figure class="hero-photo main" data-depth="1"><img src="assets/recent-work/pakenham-twilight-street.jpg" alt="ProPix twilight street real estate photography in Pakenham"></figure>
+          <figure class="hero-photo side" data-depth="1.6"><img src="assets/recent-work/kitchen-dining.jpg" alt="Bright modern kitchen and dining photography by ProPix"></figure>
+          <figure class="hero-photo detail" data-depth="2"><img src="assets/recent-work/drone-court-topdown.jpg" alt="Drone top-down real estate photography by ProPix"></figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats"><div class="stats-grid wrap"><div class="stat"><strong>HDR</strong><span>Magazine-ready images</span></div><div class="stat"><strong>Drone</strong><span>Aerial perspectives</span></div><div class="stat"><strong>Video</strong><span>Cinematic walkthroughs</span></div><div class="stat"><strong>Plans</strong><span>Clear floor layouts</span></div></div></div>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="intro-grid reveal"><div><p class="eyebrow">One creative partner</p><h2 class="section-title">Everything your listing needs.</h2></div><p class="section-copy">From the first hero image to the final social reel, ProPix creates a consistent visual story designed for property campaigns across Melbourne.</p></div>
+        <div class="service-grid">
+          <article class="service reveal"><span class="num">01</span><svg class="icon" viewBox="0 0 24 24"><path d="M14.5 4h-5L8 6H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></svg><h3>HDR Photography</h3><p>Natural, bright and carefully composed images that make every room feel inviting.</p></article>
+          <article class="service reveal"><span class="num">02</span><svg class="icon" viewBox="0 0 24 24"><path d="M12 12h.01M8 8h8v8H8zM3 5h5M16 5h5M3 19h5M16 19h5"/></svg><h3>Drone Media</h3><p>Aerial photography and video that reveal location, land and lifestyle from above.</p></article>
+          <article class="service reveal"><span class="num">03</span><svg class="icon" viewBox="0 0 24 24"><path d="m16 13 5 3V8l-5 3zM3 6h13v12H3z"/></svg><h3>Property Video</h3><p>Smooth cinematic walkthroughs and vertical reels built for listings and social media.</p></article>
+          <article class="service reveal"><span class="num">04</span><svg class="icon" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM9 3v8h12M9 21v-5H3"/></svg><h3>Floor Plans</h3><p>Professional, easy-to-read layouts that help buyers understand the property instantly.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="work-head reveal"><div><p class="eyebrow">Selected portfolio</p><h2 class="section-title">Recent work, made to be noticed.</h2></div><p class="section-copy">Clean lines. True colour. Strong first impressions from recent ProPix property shoots.</p></div>
+        <div class="work-grid">
+          <article class="project tilt"><img src="assets/recent-work/twilight-exterior.jpg" alt="Luxury twilight exterior property photography"><div class="project-info"><strong>Twilight exterior</strong><span>Drone · Photography · Pakenham</span></div></article>
+          <article class="project tilt"><img src="assets/recent-work/living-dining.jpg" alt="Styled open-plan living and dining room photography"><div class="project-info"><strong>Interior story</strong><span>HDR photography</span></div></article>
+          <article class="project tilt"><img src="assets/recent-work/aerial-twilight.jpg" alt="Aerial twilight property image near freeway"><div class="project-info"><strong>Aerial campaign</strong><span>Drone · Video</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-showcase" id="video">
+      <div class="video-grid wrap">
+        <div class="video-frame reveal">
+          <video autoplay muted loop playsinline controls poster="assets/recent-work/twilight-exterior.jpg">
+            <source src="assets/recent-work/propix-cinematic-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-copy reveal">
+          <p class="eyebrow">Cinematic property video</p>
+          <h2 class="section-title">Video that keeps buyers watching.</h2>
+          <p class="section-copy">Use smooth property clips on your website, listing pages, reels and agent socials to make the campaign feel premium before buyers arrive in person.</p>
+          <ul class="video-list">
+            <li>Autoplay muted video for the website with user controls available.</li>
+            <li>Premium motion style matched to real estate listing campaigns.</li>
+            <li>Works alongside photography, drone media and floor plans.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="recent-work">
+      <div class="wrap">
+        <div class="intro-grid reveal"><div><p class="eyebrow">Recent ProPix shoots</p><h2 class="section-title">A stronger gallery for client confidence.</h2></div><p class="section-copy">Exterior, interior, drone and location images displayed in a premium black and gold portfolio layout.</p></div>
+        <div class="gallery-grid">
+          <article class="gallery-card wide reveal"><img src="assets/recent-work/propix-front-evening.jpg" alt="Modern home exterior at evening"><div class="gallery-caption"><strong>Modern frontage</strong><span>Exterior photography</span></div></article>
+          <article class="gallery-card reveal"><img src="assets/recent-work/backyard-daylight.jpg" alt="Large backyard and rear home exterior"><div class="gallery-caption"><strong>Backyard view</strong><span>Daylight exterior</span></div></article>
+          <article class="gallery-card reveal"><img src="assets/recent-work/propix-exterior-day.jpg" alt="Daylight home exterior photography"><div class="gallery-caption"><strong>Street appeal</strong><span>Listing hero image</span></div></article>
+          <article class="gallery-card tall reveal"><img src="assets/recent-work/drouin-aerial-location.jpg" alt="Aerial location map style real estate image"><div class="gallery-caption"><strong>Location aerial</strong><span>Drone marketing</span></div></article>
+          <article class="gallery-card reveal"><img src="assets/recent-work/bathroom-detail.jpg" alt="Clean modern bathroom photography"><div class="gallery-caption"><strong>Bathroom detail</strong><span>Interior photography</span></div></article>
+          <article class="gallery-card wide reveal"><img src="assets/recent-work/pakenham-drone-panorama.jpg" alt="Wide drone panorama over Pakenham"><div class="gallery-caption"><strong>Pakenham panorama</strong><span>Drone photography</span></div></article>
+          <article class="gallery-card reveal"><img src="assets/recent-work/drone-court-topdown.jpg" alt="Top down drone image of a court and homes"><div class="gallery-caption"><strong>Top-down drone</strong><span>Aerial perspective</span></div></article>
+          <article class="gallery-card wide reveal"><img src="assets/recent-work/pakenham-twilight-street.jpg" alt="Twilight street scene with homes"><div class="gallery-caption"><strong>Twilight campaign</strong><span>Evening property media</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="packages" id="packages">
+      <div class="wrap">
+        <div class="intro-grid reveal"><div><p class="eyebrow">Simple packages</p><h2 class="section-title">Choose your campaign.</h2></div><p class="section-copy">Straightforward options for every listing. Final pricing depends on property size, location and required services.</p></div>
+        <div class="package-grid">
+          <article class="package reveal"><h3>Essential</h3><div class="price">$300–$450</div><p>Strong essentials for a polished property listing.</p><ul><li>15–20 professionally edited photos</li><li>Professional floor plan</li><li>Online delivery</li></ul><a class="btn" href="#quote" data-package="Essential">Choose Essential</a></article>
+          <article class="package featured reveal"><span class="badge">Most popular</span><h3>Signature</h3><div class="price">$400–$650</div><p>The complete visual foundation for listings that need reach.</p><ul><li>15–20 professionally edited photos</li><li>Drone photography</li><li>Professional floor plan</li></ul><a class="btn" href="#quote" data-package="Signature">Choose Signature</a></article>
+          <article class="package reveal"><h3>Campaign</h3><div class="price">$700–$1,200<small>+</small></div><p>Premium content across every marketing channel.</p><ul><li>Professional HDR photography</li><li>Drone photography and video</li><li>Cinematic property video</li><li>Floor plan and twilight image</li></ul><a class="btn" href="#quote" data-package="Campaign">Choose Campaign</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="process-grid wrap">
+        <div class="reveal"><p class="eyebrow">Easy from start to finish</p><h2 class="section-title">You list. We make it look exceptional.</h2></div>
+        <div class="steps reveal"><article class="step"><span>01</span><div><h3>Tell us about the property</h3><p>Share the address, preferred date and the media you need.</p></div></article><article class="step"><span>02</span><div><h3>We capture every angle</h3><p>Efficient on-site production with careful styling and composition.</p></div></article><article class="step"><span>03</span><div><h3>Ready to launch</h3><p>Receive polished, campaign-ready content through online delivery.</p></div></article></div>
+      </div>
+    </section>
+
+    <section class="quote" id="quote">
+      <div class="quote-grid wrap">
+        <div class="reveal"><p class="eyebrow">Ready when you are</p><h2>Let’s shoot your next listing.</h2><p class="section-copy">Complete the details and your quote request will open directly in WhatsApp, ready to send.</p><a class="contact-link" href="tel:+61421792742">0421 792 742</a><a class="contact-link" href="mailto:propixrealestatephotography@gmail.com">propixrealestatephotography@gmail.com</a></div>
+        <form class="quote-form reveal" id="quoteForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field full"><label for="address">Property address or suburb</label><input id="address" name="address" required></div>
+            <div class="field"><label for="service">Package</label><select id="service" name="service"><option>Not sure yet</option><option>Essential</option><option>Signature</option><option>Campaign</option><option>Custom services</option></select></div>
+            <div class="field"><label for="date">Preferred date</label><input id="date" name="date" type="date"></div>
+            <div class="field full"><label for="message">Anything else?</label><textarea id="message" name="message" placeholder="Property size, special features or required services"></textarea></div>
+          </div>
+          <button class="btn" type="submit">Send quote request on WhatsApp <span aria-hidden="true">↗</span></button>
+          <p class="form-note">No broken web form or waiting screen. WhatsApp opens with all your details pre-filled.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><div class="footer-grid"><div class="footer-brand">PRO<span>PIX</span><small> · Real Estate Photography Melbourne</small></div><div class="socials"><a href="https://www.instagram.com/propixrealestatephotography1/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=61588986824109" target="_blank" rel="noopener">Facebook</a><a href="https://wa.me/61421792742" target="_blank" rel="noopener">WhatsApp</a></div></div><div class="footer-bottom"><span>© 2026 ProPix Real Estate Photography</span><span>Pakenham · Melbourne · Victoria</span></div></div></footer>
+  <div class="mobile-bar"><a href="tel:+61421792742">Call now</a><a href="#quote">Get a quote ↗</a></div>
+
+  <script>
+    const menuButton=document.querySelector('.menu-toggle');
+    const nav=document.querySelector('.nav-links');
+    menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));
+
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+      document.querySelectorAll('.tilt').forEach(card=>{card.addEventListener('pointermove',event=>{const box=card.getBoundingClientRect();const x=(event.clientX-box.left)/box.width-.5;const y=(event.clientY-box.top)/box.height-.5;card.style.transform='rotateY('+x*7+'deg) rotateX('+(-y*7)+'deg) translateZ(8px)'});card.addEventListener('pointerleave',()=>card.style.transform='')});
+      const stage=document.querySelector('.hero-stage');
+      stage.addEventListener('pointermove',event=>{const box=stage.getBoundingClientRect();const x=(event.clientX-box.left)/box.width-.5;const y=(event.clientY-box.top)/box.height-.5;stage.querySelectorAll('[data-depth]').forEach(layer=>{const d=Number(layer.dataset.depth);layer.style.marginLeft=x*d*12+'px';layer.style.marginTop=y*d*12+'px'})});
+    }
+
+    document.querySelectorAll('[data-package]').forEach(button=>button.addEventListener('click',()=>{document.querySelector('#service').value=button.dataset.package}));
+    document.querySelector('#quoteForm').addEventListener('submit',event=>{
+      event.preventDefault();
+      const data=new FormData(event.currentTarget);
+      const lines=['Hi ProPix, I would like a property photography quote.','','Name: '+data.get('name'),'Phone: '+data.get('phone'),'Property: '+data.get('address'),'Package: '+data.get('service'),'Preferred date: '+(data.get('date')||'Flexible'),'Notes: '+(data.get('message')||'None')];
+      window.open('https://wa.me/61421792742?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');
+    });
+  </script>
 </body>
 </html>
